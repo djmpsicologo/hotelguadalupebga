@@ -6,14 +6,14 @@ import {
   Filter, 
   Edit2, 
   Trash2, 
-  Eye,
   CheckCircle2,
   XCircle,
   Loader2,
   Users,
   AlertCircle
 } from 'lucide-react';
-import { useRooms, Room } from '../../hooks/useRooms';
+import { useRooms } from '../../hooks/useRooms';
+import type { Room } from '../../hooks/useRooms';
 
 interface RoomFormData {
   name: string;

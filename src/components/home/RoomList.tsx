@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wifi, Tv, Coffee, Wind, Info, Loader2 } from 'lucide-react';
-import { useRooms, Room } from '../../hooks/useRooms';
+import { useRooms } from '../../hooks/useRooms';
+import type { Room } from '../../hooks/useRooms';
 
 const RoomList: React.FC = () => {
   const { rooms, loading, error } = useRooms();

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { 
   collection, 
   doc, 
-  getDocs, 
   addDoc, 
   updateDoc, 
   deleteDoc,
@@ -10,8 +9,7 @@ import {
   query,
   orderBy,
   serverTimestamp,
-  Timestamp,
-  where
+  Timestamp
 } from 'firebase/firestore';
 import { db } from '../firebase';
 

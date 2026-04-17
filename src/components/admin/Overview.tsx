@@ -5,8 +5,7 @@ import {
   BedDouble, 
   DollarSign,
   ArrowUpRight,
-  ArrowDownRight,
-  MoreVertical
+  ArrowDownRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 

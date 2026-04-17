@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hotel, MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Hotel, MapPin, Phone, Mail, Globe, MessageCircle, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -17,9 +17,9 @@ const Footer: React.FC = () => {
               Tu refugio de elegancia y confort en Bucaramanga. Ofrecemos una experiencia única que combina modernidad y calidez.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Instagram size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Facebook size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Twitter size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Globe size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><MessageCircle size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Heart size={18} /></a>
             </div>
           </div>
 

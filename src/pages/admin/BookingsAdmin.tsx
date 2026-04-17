@@ -3,9 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, 
   Calendar, 
-  CheckCircle2, 
-  Clock, 
-  MoreVertical,
   ChevronLeft,
   ChevronRight,
   Plus,
@@ -15,7 +12,8 @@ import {
   Edit2,
   X
 } from 'lucide-react';
-import { useReservations, Reservation, ReservationStatus } from '../../hooks/useReservations';
+import { useReservations } from '../../hooks/useReservations';
+import type { Reservation, ReservationStatus } from '../../hooks/useReservations';
 import { useRooms } from '../../hooks/useRooms';
 
 interface ReservationFormData {
