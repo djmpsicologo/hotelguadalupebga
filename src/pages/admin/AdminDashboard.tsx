@@ -14,6 +14,7 @@ import {
 import Overview from '../../components/admin/Overview';
 import RoomsAdmin from './RoomsAdmin';
 import BookingsAdmin from './BookingsAdmin';
+import FirebaseStatus from '../../components/admin/FirebaseStatus';
 
 const AdminDashboard: React.FC = () => {
   const location = useLocation();
@@ -94,6 +95,7 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-6">
+            <FirebaseStatus />
             <button className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-all text-slate-400">
               <Bell size={20} />
               <span className="absolute top-2 right-2 w-2 h-2 bg-teal-500 rounded-full border-2 border-bg-secondary" />

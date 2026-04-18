@@ -8,16 +8,25 @@ import Footer from '../components/layout/Footer';
 
 const Home: React.FC = () => {
   return (
-    <div className="home-page">
+    <main className="min-h-screen bg-bg-primary overflow-x-hidden">
       <Navbar />
+      
+      {/* Cinematic Hero */}
       <Hero />
-      <div className="content-container" style={{ position: 'relative', zIndex: 10, marginTop: '-50px' }}>
+      
+      {/* Floating Booking Interface */}
+      <div className="relative z-20">
         <BookingBar />
+      </div>
+
+      {/* Main Content Sections */}
+      <div className="relative pt-20 flex flex-col gap-32">
         <RoomList />
         <Services />
       </div>
+
       <Footer />
-    </div>
+    </main>
   );
 };
 

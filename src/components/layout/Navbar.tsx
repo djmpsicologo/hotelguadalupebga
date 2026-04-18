@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Hotel } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Hotel, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
@@ -9,56 +9,106 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { name: 'Inicio', href: '/' },
+    { name: 'Habitaciones', href: '#habitaciones' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Contacto', href: '#contacto' },
+  ];
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center group-hover:bg-teal-400 transition-colors">
-            <Hotel className="text-black" size={24} />
+    <nav 
+      className={`fixed w-full z-[100] transition-all duration-500 ${
+        isScrolled 
+        ? 'py-4 bg-[#0a0a0c]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
+        : 'py-8 bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Logo Section */}
+        <Link to="/" className="flex items-center gap-4 group">
+          <div className="w-11 h-11 bg-teal-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-teal-500/20">
+            <Hotel className="text-black" size={24} strokeWidth={2.5} />
           </div>
-          <div>
-            <span className="text-xl font-bold tracking-tight block leading-none">GUADALUPE</span>
-            <span className="text-[10px] text-teal-500 tracking-[0.2em] font-medium uppercase">Hotel Bucaramanga</span>
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-[0.05em] leading-none text-white">GUADALUPE</span>
+            <span className="text-[9px] text-teal-400 tracking-[0.3em] font-bold uppercase mt-1">Bucaramanga</span>
           </div>
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm font-medium hover:text-teal-400 transition-colors">Inicio</Link>
-          <a href="#habitaciones" className="text-sm font-medium hover:text-teal-400 transition-colors">Habitaciones</a>
-          <a href="#servicios" className="text-sm font-medium hover:text-teal-400 transition-colors">Servicios</a>
-          <Link to="/admin/login" className="px-5 py-2.5 bg-white/10 hover:bg-white/20 rounded-full text-sm font-medium transition-all">Admin</Link>
-          <button className="px-6 py-2.5 bg-teal-500 hover:bg-teal-400 text-black rounded-full text-sm font-semibold transition-all shadow-lg shadow-teal-500/20">
-            Reserva Ahora
-          </button>
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-10">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href}
+                className="text-[13px] font-bold uppercase tracking-widest text-slate-300 hover:text-teal-400 transition-colors duration-300"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          
+          <div className="h-4 w-px bg-white/10 mx-2" />
+          
+          <div className="flex items-center gap-6">
+            <Link to="/admin/login" className="text-[11px] font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+              Admin
+            </Link>
+            <button className="px-7 py-3 bg-teal-500 hover:bg-teal-400 text-black rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-teal-500/10 hover:shadow-teal-500/20 hover:-translate-y-0.5">
+              Reserva Ahora
+            </button>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X /> : <Menu />}
+        <button 
+          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 py-8 px-6 flex flex-col gap-6 md:hidden"
-        >
-          <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Inicio</Link>
-          <a href="#habitaciones" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Habitaciones</a>
-          <a href="#servicios" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Servicios</a>
-          <Link to="/admin/login" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium">Admin</Link>
-          <button className="w-full py-4 bg-teal-500 text-black rounded-xl font-bold">Reserva Ahora</button>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-[#0a0a0c] border-b border-white/5 overflow-hidden"
+          >
+            <div className="px-6 py-12 flex flex-col gap-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-2xl font-bold tracking-tight text-white hover:text-teal-400"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="h-px w-full bg-white/5 my-4" />
+              <button className="w-full py-5 bg-teal-500 text-black rounded-2xl font-bold uppercase tracking-widest text-sm">
+                Reserva Ahora
+              </button>
+              <div className="flex items-center justify-center gap-2 text-slate-500 text-xs font-medium">
+                <Phone size={14} />
+                <span>+57 300 000 0000</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
