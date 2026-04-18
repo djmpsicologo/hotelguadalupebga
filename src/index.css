@@ -22,6 +22,16 @@
   body {
     @apply font-main bg-bg-primary text-white antialiased leading-relaxed;
   }
+
+  /* Fix for invisible select options in dark mode */
+  select {
+    color-scheme: dark;
+  }
+  
+  option {
+    background-color: #121215;
+    color: white;
+  }
 }
 
 /* Custom Utilities for v4 */
@@ -30,6 +40,14 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility glass-panel {
+  background: rgba(18, 18, 21, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
 }
 
 @utility text-glow {
@@ -44,9 +62,9 @@
 
 @utility cinematic-overlay {
   background: linear-gradient(to bottom, 
-    rgba(10, 10, 12, 0.45) 0%, 
-    rgba(10, 10, 12, 0.2) 40%, 
-    rgba(10, 10, 12, 0.95) 100%
+    rgba(10, 10, 12, 0.1) 0%, 
+    rgba(10, 10, 12, 0.05) 40%, 
+    rgba(10, 10, 12, 0.4) 100%
   );
 }
 

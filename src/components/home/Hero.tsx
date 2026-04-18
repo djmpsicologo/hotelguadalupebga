@@ -5,14 +5,14 @@ import { ChevronRight, Star } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center">
-      {/* Cinematic Background */}
+      {/* Foreground Background with subtle overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center scale-105 animate-slow-zoom"
           style={{ backgroundImage: "url('/assets/Fachada.jpg')" }}
         />
-        {/* Dynamic Gradient Overlay */}
-        <div className="absolute inset-0 cinematic-overlay" />
+        {/* Softer, minimal overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Hero Content */}

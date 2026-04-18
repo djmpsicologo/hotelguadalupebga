@@ -1,11 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Wifi, Tv, Coffee, Wind, Info, Loader2, Star, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Wifi, Tv, Coffee, Wind, Info, Loader2, Star, Sparkles, X, Maximize2 } from 'lucide-react';
 import { useRooms } from '../../hooks/useRooms';
 import type { Room } from '../../hooks/useRooms';
 
 const RoomList: React.FC = () => {
   const { rooms, loading, error } = useRooms();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Filtrar solo habitaciones disponibles para mostrar
   const availableRooms = rooms.filter(room => room.status === 'Available');
@@ -88,9 +89,12 @@ const RoomList: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group cursor-pointer"
+              className="group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 shadow-2xl transition-all duration-700 group-hover:-translate-y-2">
+              <div 
+                className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 shadow-2xl transition-all duration-700 group-hover:-translate-y-2 cursor-zoom-in"
+                onClick={() => setSelectedImage(room.image || `/assets/Hab${(index % 3) + 1}.jpg`)}
+              >
                 <img 
                   src={room.image || `/assets/Hab${(index % 3) + 1}.jpg`} 
                   alt={room.name} 
@@ -104,6 +108,13 @@ const RoomList: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent opacity-80" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                 
+                {/* Zoom Icon on Hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                    <Maximize2 size={24} className="text-white" />
+                  </div>
+                </div>
+
                 {/* Tags & Metadata */}
                 <div className="absolute top-6 right-6">
                   <span className="px-5 py-2 glass-effect text-white text-[9px] font-bold rounded-full uppercase tracking-[0.2em] shadow-lg">
@@ -149,8 +160,40 @@ const RoomList: React.FC = () => {
           ))}
         </div>
       )}
+
+      {/* Lightbox / Pop-up Gallery */}
+      <AnimatePresence>
+        {selectedImage && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+              className="fixed inset-0 bg-black/95 z-[100] cursor-zoom-out flex items-center justify-center p-4 md:p-12"
+            >
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-8 right-8 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-all z-[110]"
+              >
+                <X size={24} />
+              </button>
+              
+              <motion.img
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                src={selectedImage}
+                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
+
+export default RoomList;
 
 export default RoomList;

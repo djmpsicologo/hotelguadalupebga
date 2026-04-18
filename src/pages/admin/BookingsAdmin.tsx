@@ -454,17 +454,23 @@ const BookingsAdmin: React.FC = () => {
                       </div>
                       
                       <div>
-                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Estado</label>
-                        <select
-                          value={formData.status}
-                          onChange={(e) => setFormData({ ...formData, status: e.target.value as ReservationStatus })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
-                        >
-                          <option value="Pending">Pendiente</option>
-                          <option value="Confirmed">Confirmada</option>
-                          <option value="In House">En Estancia</option>
-                          <option value="Checked Out">Check Out</option>
-                        </select>
+                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Estado de la Reserva</label>
+                        <div className="flex flex-wrap gap-2">
+                          {(['Pending', 'Confirmed', 'In House', 'Checked Out', 'Cancelled'] as ReservationStatus[]).map((status) => (
+                            <button
+                              key={status}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, status })}
+                              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
+                                formData.status === status 
+                                ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                                : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+                              }`}
+                            >
+                              {statusLabels[status]}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                       
                       <div>

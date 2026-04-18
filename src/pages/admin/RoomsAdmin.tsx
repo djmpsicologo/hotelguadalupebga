@@ -277,30 +277,44 @@ const RoomsAdmin: React.FC = () => {
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Tipo</label>
-                      <select
-                        value={formData.type}
-                        onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
-                      >
-                        <option value="Estándar">Estándar</option>
-                        <option value="Superior">Superior</option>
-                        <option value="Suite">Suite</option>
-                      </select>
+                      <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Tipo de Habitación</label>
+                      <div className="flex flex-wrap gap-2">
+                        {(['Estándar', 'Superior', 'Suite'] as const).map((type) => (
+                          <button
+                            key={type}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, type })}
+                            className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
+                              formData.type === type 
+                              ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                              : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+                            }`}
+                          >
+                            {type}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Estado</label>
-                      <select
-                        value={formData.status}
-                        onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
-                      >
-                        <option value="Available">Disponible</option>
-                        <option value="Occupied">Ocupada</option>
-                        <option value="Maintenance">Mantenimiento</option>
-                      </select>
+                      <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Estado Inicial</label>
+                      <div className="flex flex-wrap gap-2">
+                        {(['Available', 'Occupied', 'Maintenance'] as const).map((status) => (
+                          <button
+                            key={status}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, status })}
+                            className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
+                              formData.status === status 
+                              ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                              : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+                            }`}
+                          >
+                            {status === 'Available' ? 'Disponible' : status === 'Occupied' ? 'Ocupada' : 'Mantenimiento'}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
