@@ -21,7 +21,27 @@ const AdminLogin: React.FC = () => {
       await login(email, password);
       navigate('/admin');
     } catch (err: any) {
-      setError('Credenciales incorrectas. Por favor verifica tu email y contraseña.');
+      console.error('Firebase Auth Error:', err.code, err.message);
+      
+      switch (err.code) {
+        case 'auth/user-not-found':
+          setError('El correo no está registrado como administrador.');
+          break;
+        case 'auth/wrong-password':
+          setError('La contraseña es incorrecta.');
+          break;
+        case 'auth/too-many-requests':
+          setError('Demasiados intentos fallidos. Intenta más tarde.');
+          break;
+        case 'auth/operation-not-allowed':
+          setError('El inicio de sesión con email no está habilitado en Firebase.');
+          break;
+        case 'auth/invalid-credential':
+          setError('Credenciales inválidas. Verifica tu email y contraseña.');
+          break;
+        default:
+          setError('Error al iniciar sesión: ' + (err.message || 'Intenta de nuevo.'));
+      }
     } finally {
       setLoading(false);
     }

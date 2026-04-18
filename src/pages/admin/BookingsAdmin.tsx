@@ -413,21 +413,44 @@ const BookingsAdmin: React.FC = () => {
                     <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Detalles de la Reserva</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Habitación *</label>
-                        <select
-                          value={formData.roomId}
-                          onChange={(e) => setFormData({ ...formData, roomId: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
-                          required
-                        >
-                          <option value="">Seleccionar habitación</option>
-                          {rooms.filter(r => r.status === 'Available' || r.id === formData.roomId).map(room => (
-                            <option key={room.id} value={room.id}>
-                              {room.name} - {room.type} (${room.price.toLocaleString()})
-                            </option>
-                          ))}
-                        </select>
+                      <div className="md:col-span-2">
+                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Seleccionar Habitación *</label>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          {rooms.filter(r => r.status === 'Available' || r.id === formData.roomId).map(room => {
+                            const isSelected = formData.roomId === room.id;
+                            return (
+                              <button
+                                key={room.id}
+                                type="button"
+                                onClick={() => setFormData({ ...formData, roomId: room.id })}
+                                className={`flex flex-col p-4 rounded-xl border text-left transition-all ${
+                                  isSelected 
+                                  ? 'bg-teal-500/10 border-teal-500 shadow-lg shadow-teal-500/10' 
+                                  : 'bg-white/5 border-white/10 hover:border-white/20'
+                                }`}
+                              >
+                                <span className={`text-xs font-bold uppercase tracking-wider mb-1 ${isSelected ? 'text-teal-400' : 'text-slate-500'}`}>
+                                  {room.type}
+                                </span>
+                                <span className="text-sm font-bold text-white mb-2">{room.name}</span>
+                                <span className={`text-xs font-medium ${isSelected ? 'text-teal-500' : 'text-slate-400'}`}>
+                                  ${room.price.toLocaleString()}
+                                </span>
+                                {isSelected && (
+                                  <motion.div 
+                                    layoutId="selectedArrow"
+                                    className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2" 
+                                  />
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {!formData.roomId && (
+                          <p className="text-[10px] text-red-400 font-bold uppercase mt-3 ml-1 animate-pulse">
+                            Debes seleccionar una habitación para continuar
+                          </p>
+                        )}
                       </div>
                       
                       <div>
