@@ -10,7 +10,8 @@ import {
   AlertCircle,
   Trash2,
   Edit2,
-  X
+  X,
+  ExternalLink
 } from 'lucide-react';
 import { useReservations } from '../../hooks/useReservations';
 import type { Reservation, ReservationStatus } from '../../hooks/useReservations';
@@ -26,6 +27,8 @@ interface ReservationFormData {
   adults: number;
   children: number;
   status: ReservationStatus;
+  paymentStatus: 'Paid' | 'Pending' | 'Partial';
+  paymentLink: string;
   specialRequests: string;
 }
 
@@ -94,7 +97,9 @@ const BookingsAdmin: React.FC = () => {
       const reservationData = {
         ...formData,
         roomNumber: room?.name || 'Desconocida',
-        total
+        total,
+        paymentStatus: formData.paymentStatus,
+        paymentLink: formData.paymentLink
       };
       
       if (editingReservation) {
@@ -124,6 +129,8 @@ const BookingsAdmin: React.FC = () => {
       adults: 2,
       children: 0,
       status: 'Confirmed',
+      paymentStatus: 'Pending',
+      paymentLink: '',
       specialRequests: ''
     });
   };
@@ -141,6 +148,8 @@ const BookingsAdmin: React.FC = () => {
       adults: reservation.adults,
       children: reservation.children,
       status: reservation.status,
+      paymentStatus: reservation.paymentStatus || 'Pending',
+      paymentLink: reservation.paymentLink || '',
       specialRequests: reservation.specialRequests || ''
     });
     setShowModal(true);
@@ -252,6 +261,7 @@ const BookingsAdmin: React.FC = () => {
                 <th className="px-8 py-5">Habitación</th>
                 <th className="px-8 py-5">Estancia</th>
                 <th className="px-8 py-5">Estado</th>
+                <th className="px-8 py-5">Pago</th>
                 <th className="px-8 py-5">Total</th>
                 <th className="px-8 py-5 text-right">Acciones</th>
               </tr>
@@ -297,6 +307,28 @@ const BookingsAdmin: React.FC = () => {
                       <option value="Checked Out">Check Out</option>
                       <option value="Cancelled">Cancelada</option>
                     </select>
+                  </td>
+                  <td className="px-8 py-5">
+                    <div className="flex flex-col gap-1.5">
+                      <span className={`text-[10px] font-bold uppercase ${
+                        res.paymentStatus === 'Paid' ? 'text-emerald-500' :
+                        res.paymentStatus === 'Partial' ? 'text-blue-400' : 'text-orange-400'
+                      }`}>
+                        {res.paymentStatus === 'Paid' ? 'Saldado' : 
+                         res.paymentStatus === 'Partial' ? 'Anticipo' : 'Pendiente'}
+                      </span>
+                      <button 
+                        onClick={() => {
+                          const link = `https://checkout.epayco.co/checkout?amount=${res.total}&p_id=GUADALUPE-${res.id.slice(0,6)}`;
+                          navigator.clipboard.writeText(link);
+                          alert('Link de PSE copiado al portapapeles para enviar al huésped.');
+                        }}
+                        className="flex items-center gap-1.5 text-[10px] font-bold text-teal-500 hover:text-teal-400 uppercase tracking-widest transition-colors"
+                      >
+                        <ExternalLink size={10} />
+                        Link PSE
+                      </button>
+                    </div>
                   </td>
                   <td className="px-8 py-5">
                     <p className="font-bold">${res.total.toLocaleString()}</p>
@@ -517,6 +549,26 @@ const BookingsAdmin: React.FC = () => {
                           onChange={(e) => setFormData({ ...formData, children: Number(e.target.value) })}
                           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
                         />
+                      </div>
+
+                      <div className="md:col-span-2">
+                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Estado del Pago</label>
+                        <div className="flex flex-wrap gap-2">
+                          {(['Pending', 'Partial', 'Paid'] as const).map((pStatus) => (
+                            <button
+                              key={pStatus}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, paymentStatus: pStatus })}
+                              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
+                                formData.paymentStatus === pStatus 
+                                ? 'bg-emerald-500 border-emerald-500 text-black shadow-lg shadow-emerald-500/20' 
+                                : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
+                              }`}
+                            >
+                              {pStatus === 'Paid' ? 'Saldado' : pStatus === 'Partial' ? 'Anticipo' : 'Pendiente'}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

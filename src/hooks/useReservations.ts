@@ -14,6 +14,7 @@ import {
 import { db } from '../firebase';
 
 export type ReservationStatus = 'In House' | 'Confirmed' | 'Pending' | 'Cancelled' | 'Checked Out';
+export type PaymentStatus = 'Paid' | 'Pending' | 'Partial';
 
 export interface Reservation {
   id: string;
@@ -25,6 +26,8 @@ export interface Reservation {
   checkIn: string;
   checkOut: string;
   status: ReservationStatus;
+  paymentStatus: PaymentStatus;
+  paymentLink?: string;
   total: number;
   adults: number;
   children: number;
