@@ -8,7 +8,7 @@ const ConfigAdmin: React.FC = () => {
           <h1 className="text-3xl font-bold">Configuración</h1>
           <p className="text-slate-500 mt-1">Administra los parámetros generales y la seguridad del sistema.</p>
         </div>
-        <button className="px-6 py-3 bg-teal-500 text-black font-bold rounded-xl shadow-lg shadow-teal-500/20 flex items-center gap-2 hover:bg-teal-400 transition-all">
+        <button className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 hover:bg-accent-secondary transition-all">
           <Save size={20} />
           Guardar Cambios
         </button>
@@ -19,7 +19,7 @@ const ConfigAdmin: React.FC = () => {
         <div className="lg:col-span-2 space-y-8">
           <div className="glass-panel p-8">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-white/5 rounded-lg border border-white/5 text-teal-500">
+              <div className="p-2 bg-white/5 rounded-lg border border-white/5 text-accent-primary">
                 <Globe size={20} />
               </div>
               <h3 className="text-xl font-bold">Información del Hotel</h3>
@@ -31,7 +31,7 @@ const ConfigAdmin: React.FC = () => {
                 <input 
                   type="text" 
                   defaultValue="Hotel Guadalupe Bucaramanga"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
               <div>
@@ -39,7 +39,7 @@ const ConfigAdmin: React.FC = () => {
                 <input 
                   type="text" 
                   defaultValue="900.XXX.XXX-X"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
               <div>
@@ -47,7 +47,7 @@ const ConfigAdmin: React.FC = () => {
                 <input 
                   type="text" 
                   defaultValue="+57 3XX XXX XXXX"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
               <div className="md:col-span-2">
@@ -55,7 +55,7 @@ const ConfigAdmin: React.FC = () => {
                 <input 
                   type="text" 
                   defaultValue="Calle XX # XX - XX, Bucaramanga"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
             </div>
@@ -80,8 +80,8 @@ const ConfigAdmin: React.FC = () => {
                     <p className="font-bold text-sm">{item.label}</p>
                     <p className="text-[10px] text-slate-500 uppercase font-medium">{item.desc}</p>
                   </div>
-                  <div className="w-12 h-6 bg-teal-500/20 rounded-full relative cursor-pointer border border-teal-500/30">
-                    <div className="absolute right-1 top-1 w-4 h-4 bg-teal-500 rounded-full" />
+                  <div className="w-12 h-6 bg-accent-primary/20 rounded-full relative cursor-pointer border border-accent-primary/30">
+                    <div className="absolute right-1 top-1 w-4 h-4 bg-accent-primary rounded-full" />
                   </div>
                 </div>
               ))}
@@ -118,8 +118,8 @@ const ConfigAdmin: React.FC = () => {
             <p className="text-xs text-slate-500 leading-relaxed mb-6">
               Tu base de datos está conectada a **Firebase Cloud**. Se realizan respaldos automáticos cada 24 horas.
             </p>
-            <div className="p-3 bg-teal-500/10 border border-teal-500/20 rounded-xl flex items-center gap-3 text-teal-400">
-              <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse" />
+            <div className="p-3 bg-accent-primary/10 border border-accent-primary/20 rounded-xl flex items-center gap-3 text-accent-primary">
+              <div className="w-2 h-2 bg-accent-primary rounded-full animate-pulse" />
               <span className="text-[10px] font-bold uppercase">Estado: Saludable</span>
             </div>
           </div>

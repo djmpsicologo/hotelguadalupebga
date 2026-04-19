@@ -50,8 +50,8 @@ const AdminLogin: React.FC = () => {
   return (
     <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-teal-500/10 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent-primary/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-primary/10 blur-[120px] rounded-full" />
       </div>
 
       <motion.div 
@@ -60,7 +60,7 @@ const AdminLogin: React.FC = () => {
         className="glass-panel w-full max-w-md p-10 relative z-10"
       >
         <div className="flex flex-col items-center mb-10">
-          <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-teal-500/20">
+          <div className="w-16 h-16 bg-accent-primary rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-accent-primary/20">
             <Hotel className="text-black" size={32} />
           </div>
           <h1 className="text-3xl font-bold text-center">Admin Portal</h1>
@@ -82,7 +82,7 @@ const AdminLogin: React.FC = () => {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all font-medium"
                 placeholder="admin@hotelguadalupe.com"
                 required
               />
@@ -97,7 +97,7 @@ const AdminLogin: React.FC = () => {
                 type="password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all font-medium"
                 placeholder="••••••••"
                 required
               />
@@ -107,7 +107,7 @@ const AdminLogin: React.FC = () => {
           <button 
             type="submit"
             disabled={loading}
-            className="w-full py-4 bg-teal-500 hover:bg-teal-400 disabled:bg-slate-600 disabled:cursor-not-allowed text-black font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 flex items-center justify-center gap-2 group"
+            className="w-full py-4 bg-accent-primary hover:bg-accent-secondary disabled:bg-slate-600 disabled:cursor-not-allowed text-black font-bold rounded-xl transition-all shadow-lg shadow-accent-primary/20 flex items-center justify-center gap-2 group"
           >
             {loading ? (
               <>

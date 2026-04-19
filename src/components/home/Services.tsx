@@ -15,7 +15,7 @@ const Services: React.FC = () => {
     <section id="servicios" className="py-24 bg-secondary/30 backdrop-blur-sm border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-teal-500 font-bold uppercase tracking-[0.2em] text-xs">Comodidades</span>
+          <span className="text-accent-primary font-bold uppercase tracking-[0.2em] text-xs">Comodidades</span>
           <h2 className="text-4xl font-bold mt-2">Servicios Premium</h2>
           <p className="text-slate-500 mt-4 max-w-xl mx-auto">
             Nos esforzamos por brindarte una experiencia inigualable con servicios diseñados para tu confort y productividad.
@@ -25,7 +25,7 @@ const Services: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-500/10 group-hover:text-teal-400 transition-all border border-white/5 group-hover:border-teal-500/20">
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent-primary/10 group-hover:text-accent-primary transition-all border border-white/5 group-hover:border-accent-primary/20">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>

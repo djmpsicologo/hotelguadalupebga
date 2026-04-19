@@ -35,7 +35,7 @@ const RoomList: React.FC = () => {
     return (
       <section id="habitaciones" className="py-24 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center justify-center h-96 gap-6">
-          <Loader2 size={48} className="animate-spin text-teal-500" />
+          <Loader2 size={48} className="animate-spin text-accent-primary" />
           <p className="text-slate-400 font-medium tracking-widest uppercase text-xs">Preparando Experiencia...</p>
         </div>
       </section>
@@ -57,8 +57,8 @@ const RoomList: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-[1px] w-8 bg-teal-500" />
-            <span className="text-teal-500 font-bold uppercase tracking-[0.4em] text-[10px]">Alojamiento Exclusivo</span>
+            <span className="h-[1px] w-8 bg-accent-primary" />
+            <span className="text-accent-primary font-bold uppercase tracking-[0.4em] text-[10px]">Alojamiento Exclusivo</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Nuestras Habitaciones</h2>
           <p className="text-slate-400 text-lg leading-relaxed">
@@ -125,7 +125,7 @@ const RoomList: React.FC = () => {
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="flex gap-3 mb-6">
                     {getAmenities(room).map((icon, i) => (
-                      <div key={i} className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-xl flex items-center justify-center border border-white/10 text-white/90 group-hover:bg-teal-500 group-hover:text-black transition-all duration-300">
+                      <div key={i} className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-xl flex items-center justify-center border border-white/10 text-white/90 group-hover:bg-accent-primary group-hover:text-black transition-all duration-300">
                         {icon}
                       </div>
                     ))}
@@ -133,7 +133,7 @@ const RoomList: React.FC = () => {
                   
                   <div className="flex justify-between items-end">
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-teal-400 transition-colors">{room.name}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-accent-primary transition-colors">{room.name}</h3>
                       <div className="flex items-center gap-2 text-slate-400 text-xs font-bold uppercase tracking-widest">
                         <span>{room.type}</span>
                         {room.type === 'Suite' && <Star size={10} className="fill-gold-accent text-gold-accent" />}
@@ -148,12 +148,12 @@ const RoomList: React.FC = () => {
                   <span className="text-slate-500 text-[9px] font-bold uppercase tracking-[0.3em] mb-1">Inversión Noche</span>
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-white font-bold text-2xl">${room.price.toLocaleString()}</span>
-                    <span className="text-teal-500/60 font-bold text-xs">COP</span>
+                    <span className="text-accent-primary/60 font-bold text-xs">COP</span>
                   </div>
                 </div>
-                <button className="text-[10px] font-bold uppercase tracking-widest text-teal-400 hover:text-white transition-colors flex items-center gap-2 group/btn">
+                <button className="text-[10px] font-bold uppercase tracking-widest text-accent-primary hover:text-white transition-colors flex items-center gap-2 group/btn">
                   Detalles
-                  <div className="w-6 h-px bg-teal-400 group-hover/btn:w-10 transition-all" />
+                  <div className="w-6 h-px bg-accent-primary group-hover/btn:w-10 transition-all" />
                 </button>
               </div>
             </motion.div>

@@ -40,12 +40,12 @@ const AdminDashboard: React.FC = () => {
       <aside className="w-72 bg-bg-secondary border-r border-white/5 flex flex-col">
         <div className="p-8">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-teal-500 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-accent-primary rounded-xl flex items-center justify-center">
               <Hotel className="text-black" size={24} />
             </div>
             <div>
               <h2 className="text-lg font-bold tracking-tight">GUADALUPE</h2>
-              <span className="text-[10px] text-teal-400 font-bold uppercase tracking-widest">Admin Panel</span>
+              <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Admin Panel</span>
             </div>
           </div>
         </div>
@@ -59,11 +59,11 @@ const AdminDashboard: React.FC = () => {
                 to={item.path}
                 className={`flex items-center gap-4 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all group ${
                   isActive 
-                  ? 'bg-teal-500 text-black shadow-lg shadow-teal-500/10' 
+                  ? 'bg-accent-primary text-black shadow-lg shadow-accent-primary/10' 
                   : 'text-slate-500 hover:bg-white/5 hover:text-white'
                 }`}
               >
-                <span className={`${isActive ? 'text-black' : 'group-hover:text-teal-400'} transition-colors`}>
+                <span className={`${isActive ? 'text-black' : 'group-hover:text-accent-primary'} transition-colors`}>
                   {item.icon}
                 </span>
                 {item.label}
@@ -100,15 +100,15 @@ const AdminDashboard: React.FC = () => {
             <FirebaseStatus />
             <button className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-all text-slate-400">
               <Bell size={20} />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-teal-500 rounded-full border-2 border-bg-secondary" />
+              <span className="absolute top-2 right-2 w-2 h-2 bg-accent-primary rounded-full border-2 border-bg-secondary" />
             </button>
             <div className="h-8 w-px bg-white/10" />
             <div className="flex items-center gap-3">
               <div className="text-right">
                 <p className="text-sm font-bold">Admin Usuario</p>
-                <p className="text-[10px] text-teal-500 font-bold uppercase tracking-widest">General Manager</p>
+                <p className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">General Manager</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-500 to-emerald-400 border-2 border-white/10 flex items-center justify-center font-bold text-black text-sm">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-primary to-accent-secondary border-2 border-white/10 flex items-center justify-center font-bold text-black text-sm">
                 AD
               </div>
             </div>

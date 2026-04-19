@@ -26,10 +26,10 @@ const Hero: React.FC = () => {
             <div className="flex items-center gap-3 mb-8">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={12} className="fill-teal-500 text-teal-500" />
+                  <Star key={i} size={12} className="fill-accent-primary text-accent-primary" />
                 ))}
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-teal-400">
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent-primary">
                 Experiencia 5 Estrellas
               </span>
             </div>
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-5 reveal-up anim-delay-400">
-              <button className="px-10 py-5 bg-teal-500 hover:bg-teal-400 text-black rounded-2xl font-bold transition-all flex items-center gap-3 group shadow-2xl shadow-teal-500/20 active:scale-95">
+              <button className="px-10 py-5 bg-accent-primary hover:bg-accent-secondary text-black rounded-2xl font-bold transition-all flex items-center gap-3 group shadow-2xl shadow-accent-primary/20 active:scale-95">
                 Explorar Habitaciones
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
       >
-        <div className="w-[1px] h-20 bg-gradient-to-b from-teal-500/0 via-teal-500 to-teal-500/0" />
+        <div className="w-[1px] h-20 bg-gradient-to-b from-accent-primary/0 via-accent-primary to-accent-primary/0" />
       </motion.div>
 
       <style dangerouslySetInnerHTML={{ __html: `

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Hotel, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
@@ -26,19 +26,19 @@ const Navbar: React.FC = () => {
     <nav 
       className={`fixed w-full z-[100] transition-all duration-500 ${
         isScrolled 
-        ? 'py-4 bg-[#0a0a0c]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
+        ? 'py-4 bg-bg-primary/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
         : 'py-8 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-4 group">
-          <div className="w-11 h-11 bg-teal-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-teal-500/20">
-            <Hotel className="text-black" size={24} strokeWidth={2.5} />
+        <Link to="/" className="flex items-center gap-5 group">
+          <div className="w-16 h-16 rounded-xl overflow-hidden transform group-hover:scale-110 transition-all duration-500 shadow-xl shadow-accent-primary/20 border border-white/10">
+            <img src="/assets/hotel_logo.png" alt="Hotel Guadalupe Logo" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-[0.05em] leading-none text-white">GUADALUPE</span>
-            <span className="text-[9px] text-teal-400 tracking-[0.3em] font-bold uppercase mt-1">Bucaramanga</span>
+            <span className="text-2xl font-bold tracking-[0.05em] leading-tight text-white">GUADALUPE</span>
+            <span className="text-2xl font-bold text-accent-primary tracking-[0.1em] leading-tight uppercase">BGA</span>
           </div>
         </Link>
 
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
               <a 
                 key={link.name}
                 href={link.href}
-                className="text-[13px] font-bold uppercase tracking-widest text-slate-300 hover:text-teal-400 transition-colors duration-300"
+                className="text-[13px] font-bold uppercase tracking-widest text-slate-300 hover:text-accent-primary transition-colors duration-300"
               >
                 {link.name}
               </a>
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
             <Link to="/admin/login" className="text-[11px] font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
               Admin
             </Link>
-            <button className="px-7 py-3 bg-teal-500 hover:bg-teal-400 text-black rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-teal-500/10 hover:shadow-teal-500/20 hover:-translate-y-0.5">
+            <button className="px-7 py-3 bg-accent-primary hover:bg-accent-secondary text-black rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-accent-primary/10 hover:shadow-accent-primary/20 hover:-translate-y-0.5">
               Reserva Ahora
             </button>
           </div>
@@ -92,13 +92,13 @@ const Navbar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl font-bold tracking-tight text-white hover:text-teal-400"
+                  className="text-2xl font-bold tracking-tight text-white hover:text-accent-primary"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="h-px w-full bg-white/5 my-4" />
-              <button className="w-full py-5 bg-teal-500 text-black rounded-2xl font-bold uppercase tracking-widest text-sm">
+              <button className="w-full py-5 bg-accent-primary text-black rounded-2xl font-bold uppercase tracking-widest text-sm">
                 Reserva Ahora
               </button>
               <div className="flex items-center justify-center gap-2 text-slate-500 text-xs font-medium">

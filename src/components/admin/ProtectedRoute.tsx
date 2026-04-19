@@ -14,7 +14,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   if (loading) {
     return (
       <div className="min-h-screen bg-bg-primary flex items-center justify-center">
-        <Loader2 size={40} className="animate-spin text-teal-500" />
+        <Loader2 size={40} className="animate-spin text-accent-primary" />
       </div>
     );
   }

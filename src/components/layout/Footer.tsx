@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-accent-primary rounded-lg flex items-center justify-center">
                 <Hotel className="text-black" size={24} />
               </div>
               <span className="text-xl font-bold">GUADALUPE</span>
@@ -17,19 +17,19 @@ const Footer: React.FC = () => {
               Tu refugio de elegancia y confort en Bucaramanga. Ofrecemos una experiencia única que combina modernidad y calidez.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Globe size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><MessageCircle size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-black transition-all"><Heart size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent-primary hover:text-black transition-all"><Globe size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent-primary hover:text-black transition-all"><MessageCircle size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent-primary hover:text-black transition-all"><Heart size={18} /></a>
             </div>
           </div>
 
           <div>
             <h4 className="text-lg font-bold mb-6">Enlaces Rápidos</h4>
             <ul className="flex flex-col gap-4 text-sm text-slate-500">
-              <li><a href="#" className="hover:text-teal-400 transition-colors">Habitaciones</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">Servicios</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">Restaurante</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">Términos y Condiciones</a></li>
+              <li><a href="#" className="hover:text-accent-primary transition-colors">Habitaciones</a></li>
+              <li><a href="#" className="hover:text-accent-primary transition-colors">Servicios</a></li>
+              <li><a href="#" className="hover:text-accent-primary transition-colors">Restaurante</a></li>
+              <li><a href="#" className="hover:text-accent-primary transition-colors">Términos y Condiciones</a></li>
             </ul>
           </div>
 
@@ -37,15 +37,15 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-6">Contacto</h4>
             <ul className="flex flex-col gap-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-teal-500 shrink-0" />
+                <MapPin size={18} className="text-accent-primary shrink-0" />
                 <span>Carrera 15 # 56-31, Bucaramanga, Santander</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-teal-500 shrink-0" />
+                <Phone size={18} className="text-accent-primary shrink-0" />
                 <span>+57 (607) 123 4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-teal-500 shrink-0" />
+                <Mail size={18} className="text-accent-primary shrink-0" />
                 <span>contacto@hotelguadalupe.com</span>
               </li>
             </ul>
@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
               <input 
                 type="email" 
                 placeholder="Tu email" 
-                className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500/50 transition-all"
+                className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary/50 transition-all"
               />
-              <button className="w-full py-4 bg-teal-500 text-black font-bold rounded-xl hover:bg-teal-400 transition-all">
+              <button className="w-full py-4 bg-accent-primary text-black font-bold rounded-xl hover:bg-accent-secondary transition-all">
                 Suscribirse
               </button>
             </div>

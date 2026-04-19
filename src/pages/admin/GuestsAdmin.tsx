@@ -66,7 +66,7 @@ const GuestsAdmin: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <Loader2 size={40} className="animate-spin text-teal-500" />
+        <Loader2 size={40} className="animate-spin text-accent-primary" />
       </div>
     );
   }
@@ -89,7 +89,7 @@ const GuestsAdmin: React.FC = () => {
         </div>
         <div className="flex gap-4">
           <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl flex items-center gap-2">
-            <Users size={18} className="text-teal-500" />
+            <Users size={18} className="text-accent-primary" />
             <span className="text-sm font-bold">{guests.length} Huéspedes</span>
           </div>
         </div>
@@ -126,7 +126,7 @@ const GuestsAdmin: React.FC = () => {
                 <tr key={index} className="hover:bg-white/[0.02] transition-colors group">
                   <td className="px-8 py-5">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center font-bold border border-teal-500/20">
+                      <div className="w-10 h-10 rounded-full bg-accent-primary/10 text-accent-primary flex items-center justify-center font-bold border border-accent-primary/20">
                         {guest.name.charAt(0)}
                       </div>
                       <div>
@@ -150,7 +150,7 @@ const GuestsAdmin: React.FC = () => {
                   <td className="px-8 py-5">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2 text-xs font-bold">
-                        <History size={12} className="text-teal-500" />
+                        <History size={12} className="text-accent-primary" />
                         <span>{guest.reservationsCount} Reservas</span>
                       </div>
                       <p className="text-[10px] text-slate-500 font-bold uppercase">${guest.totalSpent.toLocaleString()} Total</p>
@@ -165,7 +165,7 @@ const GuestsAdmin: React.FC = () => {
                   <td className="px-8 py-5">
                     <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase border ${
                       guest.status === 'VIP' ? 'border-gold-accent text-gold-accent bg-gold-accent/5' :
-                      guest.status === 'Regular' ? 'border-teal-500/50 text-teal-500' :
+                      guest.status === 'Regular' ? 'border-accent-primary/50 text-accent-primary' :
                       'border-slate-500/50 text-slate-400'
                     }`}>
                       {guest.status}

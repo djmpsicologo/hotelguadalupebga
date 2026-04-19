@@ -10,8 +10,8 @@ const BookingBar: React.FC = () => {
           {/* Check In */}
           <div className="flex flex-col px-6 md:border-r border-white/10 group cursor-pointer">
             <div className="flex items-center gap-2 mb-1.5">
-              <Calendar size={14} className="text-teal-400" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-teal-400 transition-colors">Check In</span>
+              <Calendar size={14} className="text-accent-primary" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-accent-primary transition-colors">Check In</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm font-bold text-white">18 Abr, 2026</span>
@@ -22,8 +22,8 @@ const BookingBar: React.FC = () => {
           {/* Check Out */}
           <div className="flex flex-col px-6 md:border-r border-white/10 group cursor-pointer">
             <div className="flex items-center gap-2 mb-1.5">
-              <Calendar size={14} className="text-teal-400" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-teal-400 transition-colors">Check Out</span>
+              <Calendar size={14} className="text-accent-primary" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-accent-primary transition-colors">Check Out</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm font-bold text-white">20 Abr, 2026</span>
@@ -34,8 +34,8 @@ const BookingBar: React.FC = () => {
           {/* Guests */}
           <div className="flex flex-col px-6 group cursor-pointer">
             <div className="flex items-center gap-2 mb-1.5">
-              <Users size={14} className="text-teal-400" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-teal-400 transition-colors">Huéspedes</span>
+              <Users size={14} className="text-accent-primary" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-accent-primary transition-colors">Huéspedes</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm font-bold text-white">2 Adultos, 0 Niños</span>
@@ -45,7 +45,7 @@ const BookingBar: React.FC = () => {
 
           {/* Search Button */}
           <div className="flex justify-end px-2">
-            <button className="w-full md:w-auto px-10 py-5 bg-teal-500 hover:bg-teal-400 text-black rounded-2xl font-bold flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-teal-500/20 active:scale-95 group">
+            <button className="w-full md:w-auto px-10 py-5 bg-accent-primary hover:bg-accent-secondary text-black rounded-2xl font-bold flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-accent-primary/20 active:scale-95 group">
               <Search size={20} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
               <span className="uppercase tracking-widest text-xs">Buscar Disponibilidad</span>
             </button>
@@ -55,7 +55,7 @@ const BookingBar: React.FC = () => {
       </div>
       
       {/* Decorative Shadow Blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-full bg-teal-500/5 blur-[120px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-full bg-accent-primary/5 blur-[120px] -z-10" />
     </div>
   );
 };

@@ -3,12 +3,12 @@
 
 @theme {
   /* System Design Tokens */
-  --color-bg-primary: #0a0a0c;
-  --color-bg-secondary: #121215;
-  --color-bg-tertiary: #1a1a1e;
+  --color-bg-primary: #050510;
+  --color-bg-secondary: #0a0a1a;
+  --color-bg-tertiary: #101025;
   
-  --color-accent-primary: #14b8a6;
-  --color-accent-secondary: #0d9488;
+  --color-accent-primary: #d4af37;
+  --color-accent-secondary: #b8860b;
   
   --color-gold-accent: #d4af37;
   
@@ -55,7 +55,7 @@
 }
 
 @utility premium-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #14b8a6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

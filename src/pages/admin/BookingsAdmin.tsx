@@ -186,7 +186,7 @@ const BookingsAdmin: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <Loader2 size={40} className="animate-spin text-teal-500" />
+        <Loader2 size={40} className="animate-spin text-accent-primary" />
       </div>
     );
   }
@@ -213,7 +213,7 @@ const BookingsAdmin: React.FC = () => {
           </button>
           <button 
             onClick={handleAddNew}
-            className="px-6 py-3 bg-teal-500 text-black font-bold rounded-xl shadow-lg shadow-teal-500/20 hover:bg-teal-400 transition-all flex items-center gap-2"
+            className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 hover:bg-accent-secondary transition-all flex items-center gap-2"
           >
             <Plus size={20} />
             Nueva Reserva
@@ -229,7 +229,7 @@ const BookingsAdmin: React.FC = () => {
                 key={status}
                 onClick={() => setStatusFilter(status)}
                 className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
-                  statusFilter === status ? 'bg-teal-500 text-black' : 'text-slate-500 hover:text-white hover:bg-white/5'
+                  statusFilter === status ? 'bg-accent-primary text-black' : 'text-slate-500 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {statusLabels[status]}
@@ -248,9 +248,9 @@ const BookingsAdmin: React.FC = () => {
               />
             </div>
             <div className="flex items-center bg-white/5 rounded-lg px-2 py-1">
-              <button className="p-1 hover:text-teal-400"><ChevronLeft size={18} /></button>
+              <button className="p-1 hover:text-accent-primary"><ChevronLeft size={18} /></button>
               <span className="text-xs font-bold px-2">Abril 2026</span>
-              <button className="p-1 hover:text-teal-400"><ChevronRight size={18} /></button>
+              <button className="p-1 hover:text-accent-primary"><ChevronRight size={18} /></button>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ const BookingsAdmin: React.FC = () => {
                 <tr key={res.id} className="hover:bg-white/[0.02] transition-colors group">
                   <td className="px-8 py-5">
                     <div className="flex items-center gap-4">
-                      <div className="w-9 h-9 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center font-bold text-xs border border-teal-500/20">
+                      <div className="w-9 h-9 rounded-full bg-accent-primary/10 text-accent-primary flex items-center justify-center font-bold text-xs border border-accent-primary/20">
                         {res.guestName.split(' ').map(n => n[0]).join('')}
                       </div>
                       <div>
@@ -296,8 +296,8 @@ const BookingsAdmin: React.FC = () => {
                       value={res.status}
                       onChange={(e) => handleStatusChange(res.id, e.target.value as ReservationStatus)}
                       className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-transparent border cursor-pointer ${
-                        res.status === 'In House' ? 'border-teal-500/50 text-teal-500' :
-                        res.status === 'Confirmed' ? 'border-blue-500/50 text-blue-400' :
+                        res.status === 'In House' ? 'border-emerald-500/50 text-emerald-400' :
+                        res.status === 'Confirmed' ? 'border-accent-primary/50 text-accent-primary' :
                         res.status === 'Pending' ? 'border-orange-500/50 text-orange-400' :
                         res.status === 'Checked Out' ? 'border-slate-500/50 text-slate-400' :
                         'border-red-500/50 text-red-400'
@@ -325,7 +325,7 @@ const BookingsAdmin: React.FC = () => {
                           navigator.clipboard.writeText(link);
                           alert('Link de PSE copiado al portapapeles para enviar al huésped.');
                         }}
-                        className="flex items-center gap-1.5 text-[10px] font-bold text-teal-500 hover:text-teal-400 uppercase tracking-widest transition-colors"
+                        className="flex items-center gap-1.5 text-[10px] font-bold text-accent-primary hover:text-accent-secondary uppercase tracking-widest transition-colors"
                       >
                         <ExternalLink size={10} />
                         Link PSE
@@ -412,7 +412,7 @@ const BookingsAdmin: React.FC = () => {
                           type="text"
                           value={formData.guestName}
                           onChange={(e) => setFormData({ ...formData, guestName: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                           placeholder="Nombre del huésped"
                           required
                         />
@@ -424,7 +424,7 @@ const BookingsAdmin: React.FC = () => {
                           type="email"
                           value={formData.guestEmail}
                           onChange={(e) => setFormData({ ...formData, guestEmail: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                           placeholder="correo@ejemplo.com"
                         />
                       </div>
@@ -435,7 +435,7 @@ const BookingsAdmin: React.FC = () => {
                           type="tel"
                           value={formData.guestPhone}
                           onChange={(e) => setFormData({ ...formData, guestPhone: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                           placeholder="+57 300 000 0000"
                         />
                       </div>
@@ -459,21 +459,21 @@ const BookingsAdmin: React.FC = () => {
                                 onClick={() => setFormData({ ...formData, roomId: room.id })}
                                 className={`flex flex-col p-4 rounded-xl border text-left transition-all ${
                                   isSelected 
-                                  ? 'bg-teal-500/10 border-teal-500 shadow-lg shadow-teal-500/10' 
+                                  ? 'bg-accent-primary/10 border-accent-primary shadow-lg shadow-accent-primary/10' 
                                   : 'bg-white/5 border-white/10 hover:border-white/20'
                                 }`}
                               >
-                                <span className={`text-xs font-bold uppercase tracking-wider mb-1 ${isSelected ? 'text-teal-400' : 'text-slate-500'}`}>
+                                <span className={`text-xs font-bold uppercase tracking-wider mb-1 ${isSelected ? 'text-accent-primary/80' : 'text-slate-500'}`}>
                                   {room.type}
                                 </span>
                                 <span className="text-sm font-bold text-white mb-2">{room.name}</span>
-                                <span className={`text-xs font-medium ${isSelected ? 'text-teal-500' : 'text-slate-400'}`}>
+                                <span className={`text-xs font-medium ${isSelected ? 'text-accent-primary' : 'text-slate-400'}`}>
                                   ${room.price.toLocaleString()}
                                 </span>
                                 {isSelected && (
                                   <motion.div 
                                     layoutId="selectedArrow"
-                                    className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2" 
+                                    className="w-1.5 h-1.5 bg-accent-primary rounded-full mt-2" 
                                   />
                                 )}
                               </button>
@@ -497,7 +497,7 @@ const BookingsAdmin: React.FC = () => {
                               onClick={() => setFormData({ ...formData, status })}
                               className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
                                 formData.status === status 
-                                ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                                ? 'bg-accent-primary border-accent-primary text-black shadow-lg shadow-accent-primary/20' 
                                 : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
                               }`}
                             >
@@ -513,7 +513,7 @@ const BookingsAdmin: React.FC = () => {
                           type="date"
                           value={formData.checkIn}
                           onChange={(e) => setFormData({ ...formData, checkIn: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                           required
                         />
                       </div>
@@ -524,7 +524,7 @@ const BookingsAdmin: React.FC = () => {
                           type="date"
                           value={formData.checkOut}
                           onChange={(e) => setFormData({ ...formData, checkOut: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                           required
                         />
                       </div>
@@ -537,7 +537,7 @@ const BookingsAdmin: React.FC = () => {
                           max={4}
                           value={formData.adults}
                           onChange={(e) => setFormData({ ...formData, adults: Number(e.target.value) })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                         />
                       </div>
                       
@@ -549,7 +549,7 @@ const BookingsAdmin: React.FC = () => {
                           max={2}
                           value={formData.children}
                           onChange={(e) => setFormData({ ...formData, children: Number(e.target.value) })}
-                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                         />
                       </div>
 
@@ -581,7 +581,7 @@ const BookingsAdmin: React.FC = () => {
                     <textarea
                       value={formData.specialRequests}
                       onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all resize-none"
                       rows={3}
                       placeholder="Alguna petición especial..."
                     />
@@ -589,10 +589,10 @@ const BookingsAdmin: React.FC = () => {
 
                   {/* Total */}
                   {formData.roomId && formData.checkIn && formData.checkOut && (
-                    <div className="p-4 bg-teal-500/10 border border-teal-500/20 rounded-xl">
+                    <div className="p-4 bg-accent-primary/10 border border-accent-primary/20 rounded-xl">
                       <div className="flex justify-between items-center">
                         <span className="text-slate-400">Total Estimado:</span>
-                        <span className="text-2xl font-bold text-teal-500">${calculateTotal().toLocaleString()}</span>
+                        <span className="text-2xl font-bold text-accent-primary">${calculateTotal().toLocaleString()}</span>
                       </div>
                     </div>
                   )}
@@ -605,10 +605,10 @@ const BookingsAdmin: React.FC = () => {
                     >
                       Cancelar
                     </button>
-                    <button
+                     <button
                       type="submit"
                       disabled={submitLoading || !formData.roomId}
-                      className="flex-1 px-6 py-3 bg-teal-500 text-black font-bold rounded-xl hover:bg-teal-400 transition-all disabled:bg-slate-600"
+                      className="flex-1 px-6 py-3 bg-accent-primary text-black font-bold rounded-xl hover:bg-accent-secondary transition-all disabled:bg-slate-600"
                     >
                       {submitLoading ? (
                         <Loader2 size={20} className="animate-spin mx-auto" />

@@ -112,7 +112,7 @@ const RoomsAdmin: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <Loader2 size={40} className="animate-spin text-teal-500" />
+        <Loader2 size={40} className="animate-spin text-accent-primary" />
       </div>
     );
   }
@@ -135,7 +135,7 @@ const RoomsAdmin: React.FC = () => {
         </div>
         <button 
           onClick={handleAddNew}
-          className="px-6 py-3 bg-teal-500 text-black font-bold rounded-xl shadow-lg shadow-teal-500/20 flex items-center gap-2 hover:bg-teal-400 transition-all"
+          className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 hover:bg-accent-secondary transition-all"
         >
           <Plus size={20} />
           Nueva Habitación
@@ -188,14 +188,14 @@ const RoomsAdmin: React.FC = () => {
                   <td className="px-8 py-5">
                     <div className="flex items-center gap-2">
                       {room.status === 'Available' ? (
-                        <CheckCircle2 size={14} className="text-teal-500" />
+                        <CheckCircle2 size={14} className="text-accent-primary" />
                       ) : room.status === 'Occupied' ? (
                         <Users size={14} className="text-blue-500" />
                       ) : (
                         <XCircle size={14} className="text-orange-500" />
                       )}
                       <span className={`text-[10px] font-bold uppercase ${
-                        room.status === 'Available' ? 'text-teal-500' :
+                        room.status === 'Available' ? 'text-accent-primary' :
                         room.status === 'Occupied' ? 'text-blue-500' :
                         'text-orange-500'
                       }`}>
@@ -271,7 +271,7 @@ const RoomsAdmin: React.FC = () => {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                       placeholder="Ej: Habitación 101"
                       required
                     />
@@ -288,7 +288,7 @@ const RoomsAdmin: React.FC = () => {
                             onClick={() => setFormData({ ...formData, type })}
                             className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
                               formData.type === type 
-                              ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                              ? 'bg-accent-primary border-accent-primary text-black shadow-lg shadow-accent-primary/20' 
                               : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
                             }`}
                           >
@@ -307,7 +307,7 @@ const RoomsAdmin: React.FC = () => {
                             onClick={() => setFormData({ ...formData, status })}
                             className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border ${
                               formData.status === status 
-                              ? 'bg-teal-500 border-teal-500 text-black shadow-lg shadow-teal-500/20' 
+                              ? 'bg-accent-primary border-accent-primary text-black shadow-lg shadow-accent-primary/20' 
                               : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
                             }`}
                           >
@@ -325,7 +325,7 @@ const RoomsAdmin: React.FC = () => {
                         type="number"
                         value={formData.price}
                         onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                         required
                       />
                     </div>
@@ -335,7 +335,7 @@ const RoomsAdmin: React.FC = () => {
                         type="text"
                         value={formData.floor}
                         onChange={(e) => setFormData({ ...formData, floor: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                         placeholder="Ej: 1"
                         required
                       />
@@ -347,7 +347,7 @@ const RoomsAdmin: React.FC = () => {
                     <textarea
                       value={formData.description}
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-teal-500 transition-all resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all resize-none"
                       rows={3}
                       placeholder="Descripción de la habitación..."
                     />
@@ -364,7 +364,7 @@ const RoomsAdmin: React.FC = () => {
                     <button
                       type="submit"
                       disabled={submitLoading}
-                      className="flex-1 px-6 py-3 bg-teal-500 text-black font-bold rounded-xl hover:bg-teal-400 transition-all disabled:bg-slate-600"
+                      className="flex-1 px-6 py-3 bg-accent-primary text-black font-bold rounded-xl hover:bg-accent-secondary transition-all disabled:bg-slate-600"
                     >
                       {submitLoading ? (
                         <Loader2 size={20} className="animate-spin mx-auto" />
