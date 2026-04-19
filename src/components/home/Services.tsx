@@ -1,13 +1,13 @@
 import React from 'react';
-import { Wifi, Car, ShieldCheck, Coffee, Utensils, Waves } from 'lucide-react';
+import { Wifi, ShieldCheck, Tv, Wind, MapPin, BedDouble } from 'lucide-react';
 
 const services = [
   { icon: <Wifi size={32} />, title: 'Internet Alta Velocidad', desc: 'Conectividad WiFi de fibra óptica en todas las áreas del hotel.' },
-  { icon: <Car size={32} />, title: 'Parqueadero Privado', desc: 'Espacio seguro y vigilado para tu vehículo sin costo adicional.' },
   { icon: <ShieldCheck size={32} />, title: 'Seguridad 24/7', desc: 'Personal de seguridad y circuito cerrado para tu tranquilidad.' },
-  { icon: <Coffee size={32} />, title: 'Desayuno Incluido', desc: 'Comienza tu día con un delicioso desayuno tipo buffet.' },
-  { icon: <Utensils size={32} />, title: 'Restaurante', desc: 'Lo mejor de la gastronomía santandereana e internacional.' },
-  { icon: <Waves size={32} />, title: 'Lavandería', desc: 'Servicio de lavandería y planchado para estancias prolongadas.' },
+  { icon: <Tv size={32} />, title: 'Smart TV & Streaming', desc: 'Televisión inteligente con acceso a tus plataformas favoritas.' },
+  { icon: <Wind size={32} />, title: 'Aire Acondicionado', desc: 'Control de clima individual en cada habitación para tu confort.' },
+  { icon: <MapPin size={32} />, title: 'Ubicación Central', desc: 'Estamos en el corazón de Bucaramanga, cerca a centros comerciales.' },
+  { icon: <BedDouble size={32} />, title: 'Escritorio de Trabajo', desc: 'Espacio ideal para ejecutivos y viajeros que necesitan productividad.' },
 ];
 
 const Services: React.FC = () => {

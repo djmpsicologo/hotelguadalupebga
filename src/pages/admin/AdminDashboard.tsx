@@ -15,6 +15,7 @@ import Overview from '../../components/admin/Overview';
 import RoomsAdmin from './RoomsAdmin';
 import BookingsAdmin from './BookingsAdmin';
 import GuestsAdmin from './GuestsAdmin';
+import ConfigAdmin from './ConfigAdmin';
 import FirebaseStatus from '../../components/admin/FirebaseStatus';
 
 const AdminDashboard: React.FC = () => {
@@ -121,6 +122,7 @@ const AdminDashboard: React.FC = () => {
             <Route path="habitaciones" element={<RoomsAdmin />} />
             <Route path="reservas" element={<BookingsAdmin />} />
             <Route path="huespedes" element={<GuestsAdmin />} />
+            <Route path="configuracion" element={<ConfigAdmin />} />
           </Routes>
         </div>
       </main>

@@ -10,10 +10,38 @@ import {
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: 'Ocupación', value: '84%', change: '+12%', type: 'up', icon: <BedDouble className="text-blue-500" /> },
-  { label: 'Ingresos Totales', value: '$12,450.00', change: '+8%', type: 'up', icon: <DollarSign className="text-teal-500" /> },
-  { label: 'ADR (Tarifa Prom.)', value: '$150.00', change: '-2%', type: 'down', icon: <TrendingUp className="text-orange-500" /> },
-  { label: 'RevPAR', value: '$126.00', change: '+5%', type: 'up', icon: <Users className="text-purple-500" /> },
+  { 
+    label: 'Ocupación', 
+    value: '84%', 
+    change: '+12%', 
+    type: 'up', 
+    icon: <BedDouble className="text-blue-500" />,
+    desc: 'Porcentaje de habitaciones ocupadas hoy.'
+  },
+  { 
+    label: 'Ingresos Totales', 
+    value: '$ 1.245.000', 
+    change: '+8%', 
+    type: 'up', 
+    icon: <DollarSign className="text-teal-500" />,
+    desc: 'Ingresos generados por reservaciones hoy.'
+  },
+  { 
+    label: 'ADR (Tarifa Prom.)', 
+    value: '$ 115.000', 
+    change: '-2%', 
+    type: 'down', 
+    icon: <TrendingUp className="text-orange-500" />,
+    desc: 'Precio promedio cobrado por cada habitación ocupada.'
+  },
+  { 
+    label: 'RevPAR', 
+    value: '$ 96.000', 
+    change: '+5%', 
+    type: 'up', 
+    icon: <Users className="text-purple-500" />,
+    desc: 'Ingreso promedio por cada habitación disponible (éxito total).'
+  },
 ];
 
 const Overview: React.FC = () => {
@@ -50,6 +78,7 @@ const Overview: React.FC = () => {
             </div>
             <p className="text-slate-500 text-sm font-semibold">{stat.label}</p>
             <p className="text-2xl font-bold mt-1">{stat.value}</p>
+            <p className="text-[10px] text-slate-600 mt-2 font-medium leading-tight">{stat.desc}</p>
           </motion.div>
         ))}
       </div>
