@@ -195,5 +195,3 @@ const RoomList: React.FC = () => {
 };
 
 export default RoomList;
-
-export default RoomList;

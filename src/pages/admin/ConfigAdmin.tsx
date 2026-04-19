@@ -1,5 +1,4 @@
-import React from 'react';
-import { Settings, Save, Bell, Shield, Database, Globe } from 'lucide-react';
+import { Save, Bell, Shield, Database, Globe } from 'lucide-react';
 
 const ConfigAdmin: React.FC = () => {
   return (

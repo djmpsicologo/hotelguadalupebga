@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, onSnapshot, query, limit } from 'firebase/firestore';
-import { Wifi, WifiOff, Cloud, Database } from 'lucide-react';
+import { Database } from 'lucide-react';
 
 const FirebaseStatus: React.FC = () => {
   const [status, setStatus] = useState<'online' | 'offline' | 'checking'>('checking');

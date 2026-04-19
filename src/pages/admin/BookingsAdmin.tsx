@@ -58,6 +58,8 @@ const BookingsAdmin: React.FC = () => {
     adults: 2,
     children: 0,
     status: 'Confirmed',
+    paymentStatus: 'Pending',
+    paymentLink: '',
     specialRequests: ''
   });
   const [submitLoading, setSubmitLoading] = useState(false);
