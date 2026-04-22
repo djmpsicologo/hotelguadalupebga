@@ -86,17 +86,17 @@ const AdminDashboard: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-20 bg-white border-b border-slate-200 px-8 flex items-center justify-between shadow-sm z-10">
-          <div className="flex items-center gap-8">
+        <header className="h-20 bg-white border-b border-slate-200 px-8 flex flex-col gap-4 md:flex-row md:items-center justify-between shadow-sm z-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8 w-full md:w-auto">
             <div className="flex items-center gap-3">
               <img src="/icon-192.png" alt="Logo" className="w-10 h-10 rounded-lg shadow-sm" />
-              <div className="hidden md:block">
+              <div>
                 <h1 className="text-sm font-bold text-slate-900 leading-none">GUADALUPE</h1>
                 <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Bucaramanga</span>
               </div>
             </div>
 
-            <div className="relative w-96">
+            <div className="relative w-full max-w-md">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
               <input 
                 type="text" 
