@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-5 group">
           <div className="w-16 h-16 rounded-xl overflow-hidden transform group-hover:scale-110 transition-all duration-500 shadow-xl shadow-accent-primary/20 border border-white/10">
-            <img src="/assets/hotel_logo.png" alt="Hotel Guadalupe Logo" className="w-full h-full object-cover" />
+            <img src="/icon-512.png" alt="Hotel Guadalupe Logo" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col">
             <span className="text-2xl font-bold tracking-[0.05em] leading-tight text-white">GUADALUPE</span>
