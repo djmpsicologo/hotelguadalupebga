@@ -49,7 +49,7 @@ const Overview: React.FC = () => {
     <div className="space-y-8">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Resumen de Hoy</h1>
+          <h1 className="text-3xl font-bold text-accent-primary drop-shadow-[0_2px_20px_rgba(212,175,55,0.35)]">Resumen de Hoy</h1>
           <p className="text-slate-500 mt-1">Aquí tienes lo que está pasando en el hotel hoy, 16 de Abril.</p>
         </div>
         <button className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20">

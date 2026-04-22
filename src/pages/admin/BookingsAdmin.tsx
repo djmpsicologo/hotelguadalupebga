@@ -204,7 +204,7 @@ const BookingsAdmin: React.FC = () => {
     <div className="space-y-8 animate-fadeIn">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Registro de Reservas</h1>
+          <h1 className="text-3xl font-bold text-accent-primary drop-shadow-[0_2px_20px_rgba(212,175,55,0.35)]">Registro de Reservas</h1>
           <p className="text-slate-500 mt-1">Monitorea y gestiona todas las estancias activas y futuras.</p>
         </div>
         <div className="flex gap-4">

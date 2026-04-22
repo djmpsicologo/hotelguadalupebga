@@ -84,7 +84,7 @@ const GuestsAdmin: React.FC = () => {
     <div className="space-y-8 animate-fadeIn">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Directorio de Huéspedes</h1>
+          <h1 className="text-3xl font-bold text-accent-primary drop-shadow-[0_2px_20px_rgba(212,175,55,0.35)]">Directorio de Huéspedes</h1>
           <p className="text-slate-500 mt-1">Gestiona la base de datos de tus clientes y su historial.</p>
         </div>
         <div className="flex gap-4">

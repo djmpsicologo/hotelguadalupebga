@@ -5,7 +5,7 @@ const ConfigAdmin: React.FC = () => {
     <div className="space-y-8 animate-fadeIn">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Configuración</h1>
+          <h1 className="text-3xl font-bold text-accent-primary drop-shadow-[0_2px_20px_rgba(212,175,55,0.35)]">Configuración</h1>
           <p className="text-slate-500 mt-1">Administra los parámetros generales y la seguridad del sistema.</p>
         </div>
         <button className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 hover:bg-accent-secondary transition-all">
