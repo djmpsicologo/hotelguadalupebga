@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
           <div className="h-4 w-px bg-white/10 mx-2" />
           
           <div className="flex items-center gap-6">
-            <Link to="/admin/login" className="text-[11px] font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+            <Link to="/admin/login" className="text-[11px] font-bold uppercase tracking-widest text-white bg-white/10 px-3 py-2 rounded-full hover:bg-white/20 hover:text-accent-primary transition-all duration-300 shadow-sm shadow-white/10">
               Admin
             </Link>
             <button className="px-7 py-3 bg-accent-primary hover:bg-accent-secondary text-black rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-accent-primary/10 hover:shadow-accent-primary/20 hover:-translate-y-0.5">
@@ -97,6 +97,13 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              <Link 
+                to="/admin/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-bold tracking-tight text-white hover:text-accent-primary"
+              >
+                Admin
+              </Link>
               <div className="h-px w-full bg-white/5 my-4" />
               <button className="w-full py-5 bg-accent-primary text-black rounded-2xl font-bold uppercase tracking-widest text-sm">
                 Reserva Ahora
