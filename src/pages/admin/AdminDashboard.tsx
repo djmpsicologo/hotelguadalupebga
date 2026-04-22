@@ -39,17 +39,15 @@ const AdminDashboard: React.FC = () => {
       {/* Sidebar */}
       <aside className="w-72 bg-bg-secondary border-r border-white/5 flex flex-col">
         <div className="p-8">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-accent-primary rounded-xl flex items-center justify-center">
-              <Hotel className="text-black" size={24} />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold tracking-tight">GUADALUPE</h2>
-              <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Admin Panel</span>
-            </div>
-          </div>
-        </div>
-
+            <a href="https://hotelguadalupebga.com" target="_blank" rel="noreferrer" className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/10 shadow-sm">
+                <img src="/icon-192.png" alt="Hotel Guadalupe Logo" className="w-full h-full object-cover" />
+              </div>
+              <div>
+                <h2 className="text-lg font-bold tracking-tight">GUADALUPE</h2>
+                <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Admin Panel</span>
+              </div>
+            </a>
         <nav className="flex-1 px-4 space-y-2">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
