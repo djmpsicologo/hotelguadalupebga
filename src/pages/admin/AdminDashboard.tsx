@@ -86,29 +86,39 @@ const AdminDashboard: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-20 bg-bg-secondary/50 backdrop-blur-xl border-b border-white/5 px-8 flex items-center justify-between">
-          <div className="relative w-96">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
-            <input 
-              type="text" 
-              placeholder="Buscar reservas, huéspedes..." 
-              className="w-full pl-12 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-full text-sm focus:outline-none focus:border-white/20 transition-all"
-            />
+        <header className="h-20 bg-white border-b border-slate-200 px-8 flex items-center justify-between shadow-sm z-10">
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-3">
+              <img src="/icon-192.png" alt="Logo" className="w-10 h-10 rounded-lg shadow-sm" />
+              <div className="hidden md:block">
+                <h1 className="text-sm font-bold text-slate-900 leading-none">GUADALUPE</h1>
+                <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Bucaramanga</span>
+              </div>
+            </div>
+
+            <div className="relative w-96">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+              <input 
+                type="text" 
+                placeholder="Buscar reservas, huéspedes..." 
+                className="w-full pl-12 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-sm text-slate-900 focus:outline-none focus:border-accent-primary focus:bg-white transition-all"
+              />
+            </div>
           </div>
 
           <div className="flex items-center gap-6">
             <FirebaseStatus />
-            <button className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-all text-slate-400">
+            <button className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-all text-slate-500">
               <Bell size={20} />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-accent-primary rounded-full border-2 border-bg-secondary" />
+              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-accent-primary rounded-full border-2 border-white" />
             </button>
-            <div className="h-8 w-px bg-white/10" />
+            <div className="h-8 w-px bg-slate-200" />
             <div className="flex items-center gap-3">
               <div className="text-right">
-                <p className="text-sm font-bold">Admin Usuario</p>
+                <p className="text-sm font-bold text-slate-900">Admin Usuario</p>
                 <p className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">General Manager</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-primary to-accent-secondary border-2 border-white/10 flex items-center justify-center font-bold text-black text-sm">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-primary to-accent-secondary border-2 border-white shadow-sm flex items-center justify-center font-bold text-black text-sm">
                 AD
               </div>
             </div>
