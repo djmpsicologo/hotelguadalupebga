@@ -1,14 +1,45 @@
+import React, { useState } from 'react';
 import { Save, Bell, Shield, Database, Globe } from 'lucide-react';
 
 const ConfigAdmin: React.FC = () => {
+  const [formValues, setFormValues] = useState({
+    businessName: 'Hotel Guadalupe Bucaramanga',
+    taxId: '900.XXX.XXX-X',
+    phone: '+57 3XX XXX XXXX',
+    address: 'Calle XX # XX - XX, Bucaramanga',
+  });
+  const [isDirty, setIsDirty] = useState(false);
+  const [saveMessage, setSaveMessage] = useState('');
+
+  const handleInputChange = (field: keyof typeof formValues) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormValues((prev) => ({ ...prev, [field]: event.target.value }));
+    setIsDirty(true);
+    setSaveMessage('');
+  };
+
+  const handleSave = () => {
+    setIsDirty(false);
+    setSaveMessage('Cambios guardados correctamente.');
+    console.log('Configuración guardada:', formValues);
+  };
+
   return (
     <div className="space-y-8 animate-fadeIn">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold text-accent-primary drop-shadow-[0_2px_20px_rgba(212,175,55,0.35)]">Configuración</h1>
           <p className="text-slate-500 mt-1">Administra los parámetros generales y la seguridad del sistema.</p>
+          {saveMessage && <p className="mt-3 text-sm text-emerald-400">{saveMessage}</p>}
         </div>
-        <button className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 hover:bg-accent-secondary transition-all">
+
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={!isDirty}
+          className={`px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 transition-all ${
+            isDirty ? 'hover:bg-accent-secondary' : 'opacity-50 cursor-not-allowed'
+          }`}
+        >
           <Save size={20} />
           Guardar Cambios
         </button>
@@ -30,7 +61,8 @@ const ConfigAdmin: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Nombre Comercial</label>
                 <input 
                   type="text" 
-                  defaultValue="Hotel Guadalupe Bucaramanga"
+                  value={formValues.businessName}
+                  onChange={handleInputChange('businessName')}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
@@ -38,7 +70,8 @@ const ConfigAdmin: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Nit / Identificación</label>
                 <input 
                   type="text" 
-                  defaultValue="900.XXX.XXX-X"
+                  value={formValues.taxId}
+                  onChange={handleInputChange('taxId')}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
@@ -46,7 +79,8 @@ const ConfigAdmin: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Teléfono de Contacto</label>
                 <input 
                   type="text" 
-                  defaultValue="+57 3XX XXX XXXX"
+                  value={formValues.phone}
+                  onChange={handleInputChange('phone')}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
@@ -54,7 +88,8 @@ const ConfigAdmin: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Dirección Física</label>
                 <input 
                   type="text" 
-                  defaultValue="Calle XX # XX - XX, Bucaramanga"
+                  value={formValues.address}
+                  onChange={handleInputChange('address')}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-primary transition-all"
                 />
               </div>
