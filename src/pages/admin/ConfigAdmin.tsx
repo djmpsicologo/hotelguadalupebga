@@ -35,10 +35,7 @@ const ConfigAdmin: React.FC = () => {
         <button
           type="button"
           onClick={handleSave}
-          disabled={!isDirty}
-          className={`px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 transition-all ${
-            isDirty ? 'hover:bg-accent-secondary' : 'opacity-50 cursor-not-allowed'
-          }`}
+          className="px-6 py-3 bg-accent-primary text-black font-bold rounded-xl shadow-lg shadow-accent-primary/20 flex items-center gap-2 transition-all hover:bg-accent-secondary"
         >
           <Save size={20} />
           Guardar Cambios
