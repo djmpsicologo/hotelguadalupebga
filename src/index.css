@@ -107,3 +107,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
+/* ===== ADMIN LINK BLANCO ===== */
+.admin-link,
+a[href*="admin"],
+.nav-admin {
+    color: #ffffff !important;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .admin-link,
+    a[href*="admin"],
+    .nav-admin {
+        color: #ffffff !important;
+    }
+}
