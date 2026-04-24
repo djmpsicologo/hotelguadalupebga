@@ -7,7 +7,6 @@ import {
   Users, 
   Settings, 
   LogOut, 
-  Hotel,
   Bell,
   Search
 } from 'lucide-react';
@@ -48,6 +47,7 @@ const AdminDashboard: React.FC = () => {
                 <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest">Admin Panel</span>
               </div>
             </a>
+        </div>
         <nav className="flex-1 px-4 space-y-2">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;

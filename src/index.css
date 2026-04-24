@@ -122,3 +122,13 @@ a[href*="admin"],
         color: #ffffff !important;
     }
 }
+
+/* Refuerzo final para que ADMIN no cambie de color en ningun estado */
+.admin-link,
+.admin-link:link,
+.admin-link:visited,
+.admin-link:hover,
+.admin-link:focus,
+.admin-link:active {
+  color: #ffffff !important;
+}

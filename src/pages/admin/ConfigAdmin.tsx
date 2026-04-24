@@ -8,7 +8,7 @@ const ConfigAdmin: React.FC = () => {
     phone: '+57 3XX XXX XXXX',
     address: 'Calle XX # XX - XX, Bucaramanga',
   });
-  const [isDirty, setIsDirty] = useState(false);
+  const [, setIsDirty] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
 
   const handleInputChange = (field: keyof typeof formValues) => (event: React.ChangeEvent<HTMLInputElement>) => {
